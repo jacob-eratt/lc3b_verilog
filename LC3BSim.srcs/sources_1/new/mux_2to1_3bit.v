@@ -31,7 +31,7 @@ module mux_2to1_3bit(
     genvar i;
     generate
         for(i = 0; i < 3; i = i+1) begin : mux_loop
-            mux_2to1bit data_path_mux(out[i],s, a[i], b[i]);
+            mux_2to1bit data_path_mux(a[i], b[i], s, out[i] );
           end
     endgenerate
 endmodule

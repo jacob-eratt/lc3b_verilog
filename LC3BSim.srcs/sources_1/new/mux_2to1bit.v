@@ -20,15 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux_2to1bit(output result, input s, input a, input b);
+module mux_2to1bit(input a, input b, input s, output result);
     //a: 0
     //b: 1
     wire not_s;
     wire andA, andB;
     not (not_s, s);
     
-    and (andA, a, s);
-    and (andB, b, not_s);
+    and (andA, a, not_s);
+    and (andB, b, s);
     
     or (result, andA, andB);
         

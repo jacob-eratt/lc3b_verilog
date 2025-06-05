@@ -21,9 +21,9 @@
 
 
 module ALU(
-    input [1:0]ALUK,
     input [15:0] alu_a,
     input [15:0] alu_b,
+    input [1:0]ALUK,
     output [15:0] alu_out
     );
     
@@ -32,7 +32,7 @@ module ALU(
     wire [15:0] passA_out;
     wire [15:0] and_out;
     
-    adder kogge_stone(add_out, alu_a, alu_b);
+    adder kogge_stone(alu_a, alu_b, add_out);
     assign xor_out = alu_a ^ alu_b;
     assign passA_out = alu_a;
     assign and_out = alu_a & alu_b;

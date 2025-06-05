@@ -21,8 +21,9 @@
 
 
 module adder(
-        output [15:0] result, 
-        input [15:0] a, b
+        input [15:0] a, b,
+        output [15:0] result
+
     );
 
     wire [15:0] g_0;
